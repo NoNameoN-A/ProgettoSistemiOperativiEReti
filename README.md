@@ -1,5 +1,6 @@
 # ProgettoSistemiOperativiEReti
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FNoNameoN-A%2FProgettoSistemiOperativiEReti&count_bg=%231C1C1C&title_bg=%231C1C1C&icon=internetexplorer.svg&icon_color=%23E7E7E7&title=Views+Count&edge_flat=false)](https://github.com/NoNameoN-A/ProgettoSistemiOperativiEReti)
+
 Creazione di una infrastruttura di rete con configurazione di:
 - Interfaccia di rete tap0 per collegamento a internet PREROUTING
 - Firewall secondo direttive della traccia
