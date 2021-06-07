@@ -1,0 +1,103 @@
+STEP 1: Identificare i domini di collisione
+    TAP: 2
+    CD1: 153
+    CD2: 2
+    CD4: 2
+    CD5: 2
+    CD6: 247
+    CD7: 24
+    CD9: 336
+    CD10: 403
+
+STEP 2: Assegnare una maschera ad ogni dominio di collisione
+    CD1: 153 --|> 2^x >= 153+2 --|> x=8 --|> MASK(CD1): 32-8=24
+    CD2: 2 --|> 2^x >= 2+2 --|> x=2 --|> MASK(CD2): 32-2=30
+    CD4: 2 --|> 2^x >= 2+2 --|> x=2 --|> MASK(CD4): 32-2=30
+    CD5: 2 --|> 2^x >= 2+2 --|> x=2 --|> MASK(CD5): 32-2=30
+    CD6: 247 --|> 2^x >= 247+2 --|> x=8 --|> MASK(CD6): 32-8=24
+    CD7: 24 --|> 2^x >= 24+2 --|> x=5 --|> MASK(CD7): 32-5=27
+    CD9: 336 --|> 2^x >= 336+2 --|> x=9 --|> MASK(CD9): 32-9=23
+    CD10: 403 --|> 2^x >= 403+2 --|> x=9 --|> MASK(CD10): 32-10=22
+    TAP: 2 --|> 2^x >= 2+2 --|> x=2 --|> MASK(TAP): 32-2=30
+
+    CD1: 24
+    CD2: 30
+    CD4: 30
+    CD5: 30
+    CD6: 24
+    CD7: 27
+    CD9: 23
+    CD10: 22
+    TAP: 30
+
+STEP 3: Ordinamento per aree(DMZ, GREEN, RED)
+    GREEN:
+        CD1: 24
+
+    DMZ: 
+        CD6: 24
+        CD7: 27
+        
+    RED:
+        CD9: 23
+        CD10: 22
+        
+    ALTRI:
+        CD2: 30
+        CD4: 30
+        CD5: 30
+        TAP: 30
+
+STEP 4: Ordinamento dei domini di collisione da maschera più bassa a maschera più alta
+    GREEN:
+        CD1: 24
+
+    DMZ: 
+        CD6: 24
+        CD7: 27
+        
+    RED:
+        CD10: 22
+        CD9: 23
+        
+    ALTRI:
+        CD2: 30
+        CD4: 30
+        CD5: 30
+        TAP: 30
+
+STEP 5: Accorpamento
+    GREEN: 24
+        CD1: 24
+
+    DMZ: 23
+        CD6: 24
+        CD7: 27
+        
+    RED: 21
+        CD10: 22
+        CD9: 23
+        
+    ALTRI: 30
+        CD2: 30
+        CD4: 30
+        CD5: 30
+        TAP: 30
+
+STEP 6: Ordinamento delle aree per maschera
+    RED: 21
+        CD10: 22
+        CD9: 23
+
+    DMZ: 23
+        CD6: 24
+        CD7: 27
+
+    GREEN: 24
+        CD1: 24
+        
+    ALTRI: 30
+        CD2: 30
+        CD4: 30
+        CD5: 30
+        TAP: 30

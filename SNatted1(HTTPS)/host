@@ -1,0 +1,19 @@
+# Non essendo espressamente richiesto dalla traccia non ho implementato HTTPS ma se l'avessi dovuto implementare sarebbero stati questi i passaggi
+
+# Stabilisco un server dns di riferimento
+...
+85.94.199.210       ftp.it.debian.org
+151.101.130.132   secutiry.debian.org
+...
+
+# Effettuo l'update
+$ apt-get update
+
+# Installo apache
+$ apt-get install apache
+
+# Setto a piacimento apache fornendo le pagine richieste
+...
+
+# DNatto su F1
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j DNAT --to-destination 10.0.8.2
